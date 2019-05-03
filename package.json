@@ -75,7 +75,7 @@
     "webpack-dev-server": "^3.1.8",
     "webpack-merge": "^4.1.4"
   },
-  "homepage": "https://github.com/rahul2104/react-pdf-viewer",
+  "homepage": "https://github.com/rahul2104/reactjs-pdf-reader",
   "keywords": [
     "react",
     "pdf",
@@ -87,7 +87,7 @@
   "main": "lib/app.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rahul2104/react-pdf-viewer.git"
+    "url": "git+https://github.com/rahul2104/reactjs-pdf-reader.git"
   },
   "scripts": {
     "build": "yarn run clean-dist && webpack -p --config=configs/webpack/prod.js",
@@ -102,5 +102,5 @@
     "start-prod": "yarn run build && node express.js",
     "test": "jest --watch --coverage --config=configs/jest.json"
   },
-  "version": "1.0.4"
+  "version": "1.0.5"
 }
