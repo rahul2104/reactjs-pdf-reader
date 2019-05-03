@@ -1,0 +1,106 @@
+{
+  "name": "reactjs-pdf-reader",
+  "_inBundle": false,
+  "_location": "/reactjs-pdf-reader",
+  "_phantomChildren": {
+    "loader-utils": "1.2.3",
+    "mime": "2.4.0",
+    "schema-utils": "1.0.0"
+  },
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "reactjs-pdf-reader",
+    "name": "reactjs-pdf-reader",
+    "escapedName": "reactjs-pdf-reader",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_spec": "reactjs-pdf-reader",
+  "author": {
+    "name": "Rahul Singh"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-stage-2": "^6.24.1",
+    "less": "^3.8.1",
+    "less-loader": "^4.1.0",
+    "pdfjs-dist": "2.0.550",
+    "react-css-modules": "^4.7.7",
+    "ts-loader": "^5.2.2",
+    "typings-for-css-modules-loader": "^1.7.0",
+    "url-loader": "^1.1.2"
+  },
+  "deprecated": false,
+  "description": "PDF Reader in browser for React js",
+  "devDependencies": {
+    "@babel/cli": "^7.1.0",
+    "@babel/core": "^7.1.0",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-react": "^7.0.0",
+    "@types/jest": "^23.3.2",
+    "@types/node": "^10.10.2",
+    "@types/react": "^16.4.14",
+    "@types/react-dom": "^16.0.7",
+    "awesome-typescript-loader": "^5.2.1",
+    "babel-loader": "^8.0.2",
+    "css-loader": "^1.0.0",
+    "express": "^4.16.3",
+    "file-loader": "^2.0.0",
+    "html-webpack-plugin": "^3.2.0",
+    "image-webpack-loader": "^4.3.1",
+    "jest": "^23.6.0",
+    "node-sass": "^4.9.3",
+    "react": "^16.5.2",
+    "react-addons-test-utils": "^15.6.2",
+    "react-dom": "^16.5.2",
+    "react-hot-loader": "^4.3.11",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.0",
+    "stylelint": "^9.5.0",
+    "stylelint-config-standard": "^18.2.0",
+    "stylelint-webpack-plugin": "^0.10.5",
+    "tslint": "^5.11.0",
+    "typescript": "^3.0.3",
+    "uglifyjs-webpack-plugin": "^2.0.1",
+    "webpack": "^4.19.1",
+    "webpack-cli": "^3.3.1",
+    "webpack-dev-middleware": "^3.3.0",
+    "webpack-dev-server": "^3.1.8",
+    "webpack-merge": "^4.1.4"
+  },
+  "homepage": "https://github.com/rahul2104/react-pdf-viewer",
+  "keywords": [
+    "react",
+    "pdf",
+    "pdfjs",
+    "react-pdf-reader",
+    "reactjs-pdf-reader"
+  ],
+  "license": "MIT",
+  "main": "lib/app.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rahul2104/react-pdf-viewer.git"
+  },
+  "scripts": {
+    "build": "yarn run clean-dist && webpack -p --config=configs/webpack/prod.js",
+    "clean-dist": "rm -f -r -d dist",
+    "clean-lib": "rm -f -r -d lib",
+    "lib": "yarn run clean-lib && webpack --config=configs/webpack/lib.js  --progress --colors",
+    "lint": "yarn run lint:ts && yarn run lint:sass",
+    "lint:sass": "stylelint ./src/**/*.scss",
+    "lint:ts": "tslint --fix './src/**/*.ts*' --format stylish --force",
+    "start": "yarn run start-dev",
+    "start-dev": "webpack-dev-server --config=configs/webpack/dev.js --open --inline",
+    "start-prod": "yarn run build && node express.js",
+    "test": "jest --watch --coverage --config=configs/jest.json"
+  },
+  "version": "1.0.4"
+}
