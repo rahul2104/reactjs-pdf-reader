@@ -23,6 +23,7 @@ interface IProps {
   showAllPage?: boolean;
   onDocumentComplete?: any;
   getPageNumber?: any;
+  pageScroll?:number;
   width?: number;
 }
 interface IStates {
@@ -93,6 +94,13 @@ export class PDFReader extends React.Component<IProps, IStates> {
       }
     }
     static getDerivedStateFromProps(props, state) {
+        const {pageScroll,pdfDiv} = props;
+        if(pdfDiv&&(pageScroll||pageScroll===0)) {
+            var elmnt=document.querySelector("#"+pdfDiv).querySelector("#my-pdf").querySelector('#div-pdf-'+pageScroll);
+            if(elmnt) {
+                elmnt.scrollIntoView();
+            }
+        }
       return { ...state , page: props.page};
     }
     // in the new lifestyle we can use this in shouldComponentUpdate
@@ -185,13 +193,19 @@ export class PDFReader extends React.Component<IProps, IStates> {
                }
            });
        }
-
     }
     private getCurrentPageNumber(page) {
-        console.log('page===#',page);
         const { getPageNumber } = this.props;
         if(getPageNumber) {
             this.props.getPageNumber(page)
+        }
+    }
+    private getPageScroll(page) {
+        const { pageScroll } = this.props;
+        console.log('page===>',page)
+        if(pageScroll) {
+           var elmnt=document.getElementById('div-pdf-'+page)
+            elmnt.scrollIntoView();
         }
     }
     public render(): JSX.Element {
