@@ -114,6 +114,11 @@ import { PDFReader } from 'reactjs-pdf-reader'
             <th>function</th>
             <th>after load the PDF file, in this function ,you can get some informations of the PDF file you can see this <a href="#function1">function type</a> for details</th>
         </tr>
+        <tr>
+            <th>getPageNumber</th>
+            <th>function</th>
+            <th>after load the PDF file, in this function onclick event you can get current page number of the PDF file</th>
+        </tr>
     </table>
     
     

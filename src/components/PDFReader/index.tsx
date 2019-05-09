@@ -22,6 +22,7 @@ interface IProps {
   page?: number;
   showAllPage?: boolean;
   onDocumentComplete?: any;
+  getPageNumber?: any;
   width?: number;
 }
 interface IStates {
@@ -43,7 +44,7 @@ export class PDFReader extends React.Component<IProps, IStates> {
       this.canvas = React.createRef();
     }
     public componentDidMount () {
-      const { url, data, showAllPage, onDocumentComplete } = this.props;
+      const { url, data, showAllPage, onDocumentComplete,getPageNumber } = this.props;
       const dom: any = this.canvas.current;
       if (url) {
         let obj = {
@@ -186,6 +187,13 @@ export class PDFReader extends React.Component<IProps, IStates> {
        }
 
     }
+    private getCurrentPageNumber(page) {
+        console.log('page===#',page);
+        const { getPageNumber } = this.props;
+        if(getPageNumber) {
+            this.props.getPageNumber(page)
+        }
+    }
     public render(): JSX.Element {
         const { style, totalPage } = this.state;
         const { showAllPage } = this.props;
@@ -197,7 +205,7 @@ export class PDFReader extends React.Component<IProps, IStates> {
                showAllPage ? <React.Fragment>
                               {
                                 tempArr.map((item, index) => {
-                                    return(<div className="react-pdf__Page" data-page-number={index+""} id={"div-pdf-"+index} key={"div-"+index}>
+                                    return(<div className="react-pdf__Page" data-page-number={index+""} id={"div-pdf-"+index} key={"div-"+index} onClick={this.getCurrentPageNumber.bind(this,index)}>
                                         <canvas ref={(canvas) => { this["canvas" + index] = canvas; }} key={index + ""} id={"canvas-pdf-"+index} data-page={index+""} className={"canvaspdf"}></canvas>
                                     </div>);
                                 })
