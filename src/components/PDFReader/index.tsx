@@ -183,7 +183,7 @@ export class PDFReader extends React.Component<IProps, IStates> {
        const { width, scale,onDocumentComplete } = this.props;
        if (totalPage > 0) {
            let proArr=[]
-         for (let i = 0; i < totalPage; i++) {
+         for (let i = 1; i <= totalPage; i++) {
            const dom = this["canvas" + i];
              proArr.push( this.renderPage(dom, i))
          }
@@ -218,7 +218,8 @@ export class PDFReader extends React.Component<IProps, IStates> {
              {
                showAllPage ? <React.Fragment>
                               {
-                                tempArr.map((item, index) => {
+                                tempArr.map((item, i) => {
+                                    var index=i+1;
                                     return(<div className="react-pdf__Page" data-page-number={index+""} id={"div-pdf-"+index} key={"div-"+index} onClick={this.getCurrentPageNumber.bind(this,index)}>
                                         <canvas ref={(canvas) => { this["canvas" + index] = canvas; }} key={index + ""} id={"canvas-pdf-"+index} data-page={index+""} className={"canvaspdf"}></canvas>
                                     </div>);
