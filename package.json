@@ -70,7 +70,7 @@
     "typescript": "^3.0.3",
     "uglifyjs-webpack-plugin": "^2.0.1",
     "webpack": "^4.19.1",
-    "webpack-cli": "^3.3.1",
+    "webpack-cli": "^3.3.9",
     "webpack-dev-middleware": "^3.3.0",
     "webpack-dev-server": "^3.1.8",
     "webpack-merge": "^4.1.4"
@@ -102,5 +102,5 @@
     "start-prod": "yarn run build && node express.js",
     "test": "jest --watch --coverage --config=configs/jest.json"
   },
-  "version": "1.0.8"
+  "version": "1.0.9"
 }
