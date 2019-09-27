@@ -202,7 +202,6 @@ export class PDFReader extends React.Component<IProps, IStates> {
     }
     private getPageScroll(page) {
         const { pageScroll } = this.props;
-        console.log('page===>',page)
         if(pageScroll) {
            var elmnt=document.getElementById('div-pdf-'+page)
             elmnt.scrollIntoView();

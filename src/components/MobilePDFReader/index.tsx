@@ -1,7 +1,6 @@
 import * as React from "react";
 import * as CSSModules from "react-css-modules";
 import * as styles from "./index.less";
-console.log(styles);
 import * as pdfjsLib from "pdfjs-dist";
 const pdfjsViewer = require("../../../node_modules/pdfjs-dist/web/pdf_viewer.js");
 // The workerSrc property shall be specified.
@@ -124,7 +123,7 @@ export class MobilePDFReader extends React.Component<IProps,IStates> {
       }
 
       loadingErrorMessage.then(function (msg) {
-        console.log(msg)
+        //console.log(msg)
       })
       self.loadingBar.hide()
     })
@@ -147,10 +146,10 @@ export class MobilePDFReader extends React.Component<IProps,IStates> {
       self.metadata = metadata;
 
       // Provides some basic debug information
-      console.log("PDF " + pdfDocument.fingerprint + " [" +
-                  info.PDFFormatVersion + " " + (info.Producer || "-").trim() +
-                  " / " + (info.Creator || "-").trim() + "]" +
-                  " (PDF.js: " + (pdfjsLib.version || "-") + ")");
+      // console.log("PDF " + pdfDocument.fingerprint + " [" +
+      //             info.PDFFormatVersion + " " + (info.Producer || "-").trim() +
+      //             " / " + (info.Creator || "-").trim() + "]" +
+      //             " (PDF.js: " + (pdfjsLib.version || "-") + ")");
 
       let pdfTitle;
       if (metadata && metadata.has("dc:title")) {
