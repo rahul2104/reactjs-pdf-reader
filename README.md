@@ -1,5 +1,10 @@
 # React-pdf-viewer
 
+[![NPM Version][npm-image]][npm-url]
+[![Node Version][node-image]][node-url]
+[![NPM Downloads][downloads-image]][downloads-url]
+[![NPM License][npm-license]][npm-url]
+
 > PDF Reader in browser for React 16.x
 
 
@@ -238,3 +243,12 @@ otherObj | object | other coding information of the PDF file
 #### Notes
 
 I strongly recommend you to set initial value of scale is 'auto',the default is 'auto' too
+
+
+[npm-image]: https://img.shields.io/npm/v/reactjs-pdf-reader
+[npm-url]: https://www.npmjs.com/package/reactjs-pdf-reader
+[node-image]: https://img.shields.io/node/v/reactjs-pdf-reader
+[node-url]: https://www.npmjs.com/package/reactjs-pdf-reader
+[downloads-image]: https://img.shields.io/npm/dm/reactjs-pdf-reader.svg
+[downloads-url]: https://www.npmjs.com/package/reactjs-pdf-reader
+[npm-license]:https://img.shields.io/npm/l/reactjs-pdf-reader

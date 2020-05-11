@@ -1,5 +1,6 @@
 {
   "name": "reactjs-pdf-reader",
+  "version": "1.0.11",
   "_inBundle": false,
   "_location": "/reactjs-pdf-reader",
   "_phantomChildren": {
@@ -102,5 +103,8 @@
     "start-prod": "yarn run build && node express.js",
     "test": "jest --watch --coverage --config=configs/jest.json"
   },
-  "version": "1.0.9"
+  "engines": {
+    "node": ">=10.0.0",
+    "npm": ">=6.0.0"
+  }
 }
