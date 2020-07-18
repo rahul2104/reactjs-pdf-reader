@@ -27,7 +27,7 @@
 
 ### 1. Import react-read-pdf  into your react.js project.
 
-(You should import react firt,The version of react must be more than 16.x)
+(You should import react first, The version of react must be more than 16.x)
 
 Using build tools:
 
